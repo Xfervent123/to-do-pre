@@ -13,9 +13,11 @@ const inputElement = document.querySelector(".to-do__input");
 
 function loadTasks() {
 	const storedTasks = localStorage.getItem('tasks')
-	const parsedTasks = JSON.parse(storedTasks);
-	if (parsedTasks.length > 0) {
-		return JSON.parse(storedTasks)
+	if (storedTasks) {
+		const parsedTasks = JSON.parse(storedTasks);
+		if (parsedTasks.length > 0) {
+			return JSON.parse(storedTasks)
+		}
 	}
 	return items
 	
